@@ -37,4 +37,6 @@ dependencies {
 
     // SDK Sign-in prompt UI library
     compile ('com.amazonaws:aws-android-sdk-auth-ui:2.6.0@aar') {transitive = true;}
+
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.6.0'
 }

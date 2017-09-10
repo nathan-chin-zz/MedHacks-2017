@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
     /*
        This will describe the start/home screen of the app
@@ -41,5 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), com.example.android.medhacks2017.CreateAccount.class));
             }
         });
+
     }
 }

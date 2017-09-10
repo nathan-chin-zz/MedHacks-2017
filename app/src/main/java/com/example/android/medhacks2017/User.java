@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 
 public class User extends AppCompatActivity implements Serializable{
-    //private String uniqueCode;
+    private String uniqueCode;
     private String firstName;
     private String lastName;
     private String phoneNum;
@@ -50,7 +50,8 @@ public class User extends AppCompatActivity implements Serializable{
         this.doctorEmail = doctorEmail;
     }
 
-    /*public String randomCode(){
+    /*
+    public String randomCode(){
         String code = "";
         int max = CHARACTERS.length - 1;
         for(int i = 0; i < 6; i++){
@@ -61,9 +62,9 @@ public class User extends AppCompatActivity implements Serializable{
 
     //Accessor methods
 
-    /*public String getUniqueCode(){
+    public String getUniqueCode(){
         return uniqueCode;
-    }*/
+    }
 
     public String getFirstName(){
         return firstName;
@@ -98,6 +99,10 @@ public class User extends AppCompatActivity implements Serializable{
     }
 
     //Mutator methods
+
+    public void setUniqueCode(String change){
+        uniqueCode = change;
+    }
 
     public void editFirstName(String change){
         firstName = change;

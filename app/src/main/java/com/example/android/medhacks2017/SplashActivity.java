@@ -1,22 +1,7 @@
 package com.example.android.medhacks2017;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.amazonaws.mobile.auth.core.DefaultSignInResultHandler;
-import com.amazonaws.mobile.auth.core.IdentityManager;
-import com.amazonaws.mobile.auth.core.IdentityProvider;
-import com.amazonaws.mobile.auth.core.StartupAuthErrorDetails;
-import com.amazonaws.mobile.auth.core.StartupAuthResult;
-import com.amazonaws.mobile.auth.core.StartupAuthResultHandler;
-import com.amazonaws.mobile.auth.core.signin.AuthException;
-import com.amazonaws.mobile.auth.ui.AuthUIConfiguration;
-import com.amazonaws.mobile.auth.ui.SignInActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,6 +9,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        /*
         final IdentityManager identityManager =
                 IdentityManager.getDefaultIdentityManager();
 
@@ -107,14 +94,16 @@ public class SplashActivity extends AppCompatActivity {
         Context context = SplashActivity.this;
         SignInActivity.startSignInActivity(context, config);
         SplashActivity.this.finish();
-    }
+    }*/
 
-    /**
-     * Go to the main activity.
-     */
+        /**
+         * Go to the main activity.
+         */
+    /*
     private void goMain(final Activity callingActivity) {
         callingActivity.startActivity(new Intent(callingActivity, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         callingActivity.finish();
+    }*/
     }
 }

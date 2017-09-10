@@ -57,7 +57,7 @@ public class CreateAccount2 extends AppCompatActivity {
                             .setPositiveButton("Got it", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if (doctorPhone.length() == 0 && doctorPhone.length() == 0) {
+                                    if (doctorPhone.length() == 0 && doctorEmail.length() == 0) {
                                         Toast.makeText(getApplicationContext(), "Please listen to the warning", Toast.LENGTH_SHORT).show();
                                         dialog.cancel();
                                     }

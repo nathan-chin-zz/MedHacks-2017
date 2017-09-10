@@ -8,7 +8,6 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.amazonaws.mobile.auth.core.IdentityManager;
-import com.amazonaws.mobile.auth.userpools.CognitoUserPoolsSignInProvider;
 import com.amazonaws.mobile.config.AWSConfiguration;
 
 
@@ -40,7 +39,8 @@ public class Application extends MultiDexApplication {
         }
 
         // Add Amazon Cognito User Pools as Identity Provider.
+        /*
         IdentityManager.getDefaultIdentityManager().addSignInProvider(
-                CognitoUserPoolsSignInProvider.class);
+                CognitoUserPoolsSignInProvider.class);*/
     }
 }
