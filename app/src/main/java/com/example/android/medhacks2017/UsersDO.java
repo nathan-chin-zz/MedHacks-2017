@@ -16,6 +16,7 @@ public class UsersDO {
     private String _firstName;
     private String _lastName;
     private String _phoneNum;
+    private String _password;
 
     @DynamoDBHashKey(attributeName = "userId")
     @DynamoDBAttribute(attributeName = "userId")
@@ -90,5 +91,9 @@ public class UsersDO {
     public void setPhoneNum(final String _phoneNum) {
         this._phoneNum = _phoneNum;
     }
+
+    public void setPassword(final String _password) { this._password = _password; }
+    @DynamoDBAttribute(attributeName = "password")
+    public String getPassword() { return _password; }
 
 }

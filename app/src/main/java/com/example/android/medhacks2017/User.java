@@ -18,13 +18,14 @@ public class User extends AppCompatActivity implements Serializable{
     private String doctorLast;
     private String doctorPhone;
     private String doctorEmail;
-    /*final char[] CHARACTERS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+    private String password;
+    final char[] CHARACTERS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
             'r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','A',
             'B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
-            'X','Y','Z'};*/
+            'X','Y','Z'};
 
     public User(){
-        //uniqueCode = randomCode();
+        uniqueCode = randomCode();
         firstName = null;
         lastName = null;
         phoneNum = null;
@@ -33,14 +34,27 @@ public class User extends AppCompatActivity implements Serializable{
         doctorLast = null;
         doctorPhone = null;
         doctorEmail = null;
+        password = null;
     }
 
     public User(String firstName, String lastName, String phoneNum, String email){
-        //uniqueCode = randomCode();
+        uniqueCode = randomCode();
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNum = phoneNum;
         this.email = email;
+    }
+
+    public User(String firstName, String lastName, String phoneNum, String email, String doctorFirst, String doctorLast, String doctorEmail, String doctorPhone){
+        uniqueCode = randomCode();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNum = phoneNum;
+        this.email = email;
+        this.doctorFirst = doctorFirst;
+        this.doctorLast = doctorLast;
+        this.doctorPhone = doctorPhone;
+        this.doctorEmail = doctorEmail;
     }
 
     public void updateUser(String doctorFirst, String doctorLast, String doctorPhone, String doctorEmail){
@@ -50,15 +64,16 @@ public class User extends AppCompatActivity implements Serializable{
         this.doctorEmail = doctorEmail;
     }
 
-    /*
+
     public String randomCode(){
         String code = "";
         int max = CHARACTERS.length - 1;
         for(int i = 0; i < 6; i++){
-            code += CHARACTERS[(int)Math.random() * max + 1];
+            int random = (int)(Math.random() * max)+ 1;
+            code += CHARACTERS[random];
         }
         return code;
-    }*/
+    }
 
     //Accessor methods
 
@@ -98,42 +113,46 @@ public class User extends AppCompatActivity implements Serializable{
         return doctorEmail;
     }
 
+    public String getPassword() { return password; }
+
     //Mutator methods
 
     public void setUniqueCode(String change){
         uniqueCode = change;
     }
 
-    public void editFirstName(String change){
+    public void setFirstName(String change){
         firstName = change;
     }
 
-    public void editLastName(String change){
+    public void setLastName(String change){
         lastName = change;
     }
 
-    public void editPhoneNum(String change){
+    public void setPhoneNum(String change){
         phoneNum = change;
     }
 
-    public void editEmail(String change){
+    public void setEmail(String change){
         email = change;
     }
 
-    public void editDoctorFirst(String change){
+    public void setDoctorFirst(String change){
         doctorFirst = change;
     }
 
-    public void editDoctorLast(String change){
+    public void setDoctorLast(String change){
         doctorLast = change;
     }
 
-    public void editDoctorPhone(String change){
+    public void setDoctorPhone(String change){
         doctorPhone = change;
     }
 
-    public void editDoctorEmail(String change){
+    public void setDoctorEmail(String change){
         doctorEmail = change;
     }
+
+    public void setPassword(String change) { password = change; }
 
 }

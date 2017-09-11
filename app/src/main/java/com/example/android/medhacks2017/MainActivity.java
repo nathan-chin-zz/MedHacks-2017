@@ -1,11 +1,17 @@
 package com.example.android.medhacks2017;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.auth.core.StartupAuthResult;
+import com.amazonaws.mobile.auth.core.StartupAuthResultHandler;
+import com.amazonaws.mobile.config.AWSConfiguration;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,19 +26,44 @@ public class MainActivity extends AppCompatActivity {
      */
     private Button logIn;
     private TextView createAccount;
+    private int loops = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        loops++;
+
         logIn = (Button)findViewById(R.id.logIn);
         createAccount = (TextView)findViewById(R.id.createAccount);
+
+
+        Context appContext = getApplicationContext();
+        AWSConfiguration awsConfig = new AWSConfiguration(appContext);
+        final IdentityManager identityManager = new IdentityManager(appContext, awsConfig);
+        IdentityManager.setDefaultIdentityManager(identityManager);
+        identityManager.doStartupAuth(this, new StartupAuthResultHandler() {
+            @Override
+            public void onComplete(StartupAuthResult startupAuthResult) {
+                // User identity is ready as unauthenticated
+                // user or previously signed-in user.
+            }
+        });
 
         logIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startActivity(new Intent(getApplicationContext(), com.example.android.medhacks2017.LogIn.class));
+                if(loops == 0){
+                    Intent fresh = new Intent(getApplicationContext(), com.example.android.medhacks2017.LogIn.class);
+                    startActivity(fresh);
+                }
+                User same = (User) getIntent().getSerializableExtra("User");
+                String password = getIntent().getStringExtra("Password");
+                Intent fresh = new Intent(getApplicationContext(), com.example.android.medhacks2017.LogIn.class);
+                fresh.putExtra("User", same);
+                fresh.putExtra("Password", password);
+                startActivity(fresh);
             }
         });
 

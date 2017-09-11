@@ -72,7 +72,28 @@ public class CreateAccount2 extends AppCompatActivity {
                                     else {
                                         User same = (User) getIntent().getSerializableExtra("User");
                                         same.updateUser(doctorFirst, doctorLast, doctorPhone, doctorEmail);
-                                        Intent updated = new Intent(getApplicationContext(), Confirmation.class);
+                                        /*if(same.getPhoneNum() != null){
+                                            Intent textMessage = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + same.getPhoneNum()));
+                                            textMessage.putExtra("sms_body", "Your confirmation code is " + same.getUniqueCode());
+                                            try {
+                                                startActivity(textMessage);
+                                            } catch(android.content.ActivityNotFoundException ex){
+                                                Toast.makeText(getApplicationContext(), "No text messaging available. Please enter an email", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                        else{
+                                            Intent emailMessage = new Intent(Intent.ACTION_SEND);
+                                            emailMessage.setType("message/rfc822");
+                                            emailMessage.putExtra(Intent.EXTRA_EMAIL, new String[]{same.getEmail()});
+                                            emailMessage.putExtra(Intent.EXTRA_SUBJECT, "Welcome to ____");
+                                            emailMessage.putExtra(Intent.EXTRA_TEXT, "Your confirmation code is " + same.getUniqueCode());
+                                            try{
+                                                startActivity(Intent.createChooser(emailMessage, "Email sent"));
+                                            } catch(android.content.ActivityNotFoundException ex){
+                                                Toast.makeText(getApplicationContext(), "No email client found. Please enter a phone number", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }*/
+                                        Intent updated = new Intent(getApplicationContext(), Password.class);
                                         updated.putExtra("User", same);
                                         startActivity(updated);
                                     }

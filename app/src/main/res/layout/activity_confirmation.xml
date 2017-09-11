@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirmation code: "
+            android:maxLines="1"
             android:textStyle="bold"
             android:textSize="18dp"/>
 
@@ -41,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="ex: 39586"
+            android:inputType="textNoSuggestions"
             android:id="@+id/confirmationCode"/>
 
     </LinearLayout>
@@ -50,12 +52,13 @@
         android:layout_height="wrap_content"
         android:text="Done"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:id="@+id/confirmDone"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3/3"
+        android:text="4/4"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"/>
 

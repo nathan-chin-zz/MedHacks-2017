@@ -6,12 +6,11 @@
     android:layout_height="fill_parent"
     tools:context="com.example.android.medhacks2017.MainActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insert logo here"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"/>
+        android:src="@drawable/logo"
+        android:layout_margin="20dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,19 +22,23 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log-in"
+            android:text="Login"
+            android:layout_marginTop="230dp"
+            android:layout_gravity="center"
             android:id="@+id/logIn"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New to ___?"
+            android:text="New to ChillPill?"
+            android:layout_gravity="center"
             android:layout_marginTop="50dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create an account"
+            android:layout_gravity="center"
             android:id="@+id/createAccount"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"/>
